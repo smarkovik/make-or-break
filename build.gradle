@@ -1,11 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
 buildscript {
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.6.1'
+        classpath 'com.uber:infer-plugin:0.7.4'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -18,6 +22,23 @@ allprojects {
     }
 }
 
+project.ext.minSdkVersion = 15
+project.ext.compileSdkVersion = 25
+project.ext.buildToolsVersion = '25.0.2'
+project.ext.supportLibVersion = '25.0.1'
+project.ext.supportAnnotationsVersion = '25.1.0'
+
+project.ext.buildNum = 1
+project.ext.versionDate = getDate()
+project.ext.versionName = "0.0.1-beta"
+
+
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd-HHmmss')
+    return formattedDate
 }
