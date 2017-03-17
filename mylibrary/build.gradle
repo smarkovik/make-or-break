@@ -43,7 +43,12 @@ dependencies {
     apply from: "${rootDir}/config/test-dependencies.gradle", to: it
 }
 
+//generate javadoc
+apply from: "${rootDir}/config/javadoc.gradle"
 //code quality tools
 apply from: "${rootDir}/config/codequality-findbugs.gradle"
 apply from: "${rootDir}/config/codequality-pmd.gradle"
 apply from: "${rootDir}/config/codequality-infer.gradle"
+//code coverage
+apply from: "${rootDir}/config/codecoverage.gradle"
+

@@ -42,6 +42,8 @@ dependencies {
 apply from: "${rootDir}/config/codequality-findbugs.gradle"
 apply from: "${rootDir}/config/codequality-pmd.gradle"
 apply from: "${rootDir}/config/codequality-infer.gradle"
+//code coverage
+apply from: "${rootDir}/config/codecoverage.gradle"
 
 
 
