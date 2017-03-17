@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:2.3.0'
         classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.6.1'
         classpath 'com.uber:infer-plugin:0.7.4'
 
