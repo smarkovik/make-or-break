@@ -1,0 +1,15 @@
+apply plugin: 'com.uber.infer.android'
+check.dependsOn 'inferDebug'
+check.dependsOn 'eradicateDebug'
+
+
+inferPlugin {
+    infer {
+        include = project.files("src/main/java")
+//        exclude = project.files("<PATH_TO_EXCLUDE>")
+    }
+    eradicate {
+        include = project.files("src/main/java")
+//        exclude = project.files("<PATH_TO_EXCLUDE>")
+    }
+}
