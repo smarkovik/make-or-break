@@ -2,4 +2,6 @@
 <lint>
     <issue id="GradleDependency" severity="ignore" />
     <issue id="GoogleAppIndexingWarning" severity="ignore" />
+    <issue id="AllowBackup" severity="ignore" />
+    <issue id="ContentDescription" severity="ignore" />
 </lint>

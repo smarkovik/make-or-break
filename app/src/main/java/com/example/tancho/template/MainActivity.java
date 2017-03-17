@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, R.string.toast_replace_action, Snackbar.LENGTH_LONG)
+                        .setAction(R.string.toast_action, null).show();
             }
         });
 
