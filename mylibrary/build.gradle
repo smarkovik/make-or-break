@@ -42,3 +42,7 @@ dependencies {
     //test dependencies
     apply from: "${rootDir}/config/test-dependencies.gradle", to: it
 }
+
+//code quality tools
+apply from: "${rootDir}/config/codequality-findbugs.gradle"
+apply from: "${rootDir}/config/codequality-pmd.gradle"

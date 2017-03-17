@@ -1,0 +1,29 @@
+apply plugin: 'pmd'
+
+def configDir = "${project.rootDir}/config"
+def reportsDir = "${project.buildDir}/reports"
+
+
+// Add checkstyle, findbugs, pmd and lint to the check task.
+check.dependsOn 'pmd'
+
+task pmd(type: Pmd, dependsOn: "assembleDebug") {
+    ignoreFailures = false
+    ruleSetFiles = files("$configDir/pmd/pmd-ruleset.xml")
+    ruleSets = []
+
+    source 'src/main/java'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        xml {
+            destination "$reportsDir/pmd/pmd.xml"
+        }
+        html {
+            destination "$reportsDir/pmd/pmd.html"
+        }
+    }
+}

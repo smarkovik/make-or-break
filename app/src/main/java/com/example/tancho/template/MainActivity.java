@@ -24,6 +24,10 @@ public class MainActivity extends AppCompatActivity
 
         SampleSDK.runSdk();
 
+        String name = new String("name");
+        name.concat("=bob");
+        
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
