@@ -1,0 +1,5 @@
+//runtime rules
+abortOnError true
+warningsAsErrors true
+//reporting
+htmlReport true

@@ -13,7 +13,13 @@ android {
         versionName rootProject.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
+    lintOptions {
+        //lint rules
+        apply from: "${rootDir}/config/lint.gradle", to: it
+        //locations for the rules and output
+        lintConfig file("${rootDir}/config/lint/lint-config.xml")
+        htmlOutput file("${buildDir}/reports/lint/lint.html")
+    }
     buildTypes {
         release {
             minifyEnabled false
