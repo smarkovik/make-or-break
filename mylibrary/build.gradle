@@ -49,6 +49,7 @@ apply from: "${rootDir}/config/javadoc.gradle"
 apply from: "${rootDir}/config/codequality-findbugs.gradle"
 apply from: "${rootDir}/config/codequality-pmd.gradle"
 apply from: "${rootDir}/config/codequality-infer.gradle"
+apply from: "${rootDir}/config/codequality-checkstyle.gradle"
 //code coverage
 apply from: "${rootDir}/config/codecoverage.gradle"
 

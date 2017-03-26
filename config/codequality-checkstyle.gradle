@@ -1,0 +1,25 @@
+apply plugin: 'checkstyle'
+
+checkstyle {
+    configFile file("${rootDir}/config/codestyle/codestyle.xml")
+    configProperties = ['checkstyle.java.header': file("${rootDir}/config/codestyle/java.header").getAbsolutePath()]
+    toolVersion = "6.11.2"
+}
+
+task checkAllSource(type: Checkstyle) {
+    source 'src/main/java'
+    include '**/*.java'
+    classpath = project.configurations.compile
+}
+
+task failOnCheckstyleWarning {
+    def checkstyleWarningsFile = "${buildDir}/reports/checkstyle/checkAllSource.xml"
+    def intro = "There were checkstyle warnings. For more details check: "
+    def line = "------------------------------------------------------------------------------------------------"
+}
+
+// ensure that there are no style warnings
+failOnCheckstyleWarning.dependsOn checkAllSource
+
+// run checkstyle as part of the standard set of checks
+check.dependsOn failOnCheckstyleWarning
