@@ -3,18 +3,17 @@ apply plugin: 'findbugs'
 def configDir = "${project.rootDir}/config"
 def reportsDir = "${project.buildDir}/reports"
 
-
 // Add checkstyle, findbugs, pmd and lint to the check task.
 check.dependsOn 'findbugs'
 
 task findbugs(type: FindBugs, dependsOn: "assembleDebug") {
     ignoreFailures = false
-    effort = "max"
     reportLevel = "high"
+
     excludeFilter = new File("$configDir/findbugs/findbugs-filter.xml")
     classes = files("${buildDir}/intermediates/classes")
 
-    source 'src/main/java'
+    source 'src/main/java/**'
     include '**/*.java'
     exclude '**/gen/**'
 

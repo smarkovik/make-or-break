@@ -1,5 +1,5 @@
 //runtime rules
-abortOnError true
 warningsAsErrors true
+abortOnError true
 //reporting
 htmlReport true
