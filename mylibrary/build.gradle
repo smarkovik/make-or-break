@@ -12,13 +12,13 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-//    lintOptions {
-//        //lint rules
-//        apply from: "${rootDir}/config/lint.gradle", to: it
-//        //locations for the rules and output
-//        lintConfig file("${rootDir}/config/lint/lint-config.xml")
-//        htmlOutput file("${buildDir}/reports/lint/lint.html")
-//    }
+    lintOptions {
+        //lint rules
+        apply from: "${rootDir}/config/lint.gradle", to: it
+        //locations for the rules and output
+        lintConfig file("${rootDir}/config/lint/lint-config.xml")
+        htmlOutput file("${buildDir}/reports/lint/lint.html")
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -43,13 +43,12 @@ dependencies {
     apply from: "${rootDir}/config/test-dependencies.gradle", to: it
 }
 
-//generate javadoc
-//apply from: "${rootDir}/config/javadoc.gradle"
 //code quality tools
-//apply from: "${rootDir}/config/codequality-findbugs.gradle"
-//apply from: "${rootDir}/config/codequality-pmd.gradle"
-//apply from: "${rootDir}/config/codequality-infer.gradle"
-//apply from: "${rootDir}/config/codequality-checkstyle.gradle"
+apply from: "${rootDir}/config/codequality-findbugs.gradle"
+apply from: "${rootDir}/config/codequality-pmd.gradle"
+apply from: "${rootDir}/config/codequality-infer.gradle"
+apply from: "${rootDir}/config/codequality-checkstyle.gradle"
 ////code coverage
-//apply from: "${rootDir}/config/codecoverage.gradle"
-//
+apply from: "${rootDir}/config/codecoverage.gradle"
+//generate javadoc
+apply from: "${rootDir}/config/javadoc.gradle"
