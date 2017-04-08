@@ -8,8 +8,8 @@ check.dependsOn 'findbugs'
 
 task findbugs(type: FindBugs, dependsOn: "assembleDebug") {
     ignoreFailures = false
-    reportLevel = "high"
-
+    reportLevel = "low"
+    effort = "max"
     excludeFilter = new File("$configDir/findbugs/findbugs-filter.xml")
     classes = files("${buildDir}/intermediates/classes")
 
